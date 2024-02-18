@@ -117,7 +117,7 @@ const plugins = [
         process.env.SENDGRID_ORDER_ITEMS_RETURNED_ID,
       customer_password_reset_template: 
         process.env.SENDGRID_CUSTOMER_PASSWORD_RESET_ID,
-      customer_password_reset_template: 
+      user_password_reset_template: 
         process.env.SENDGRID_USER_PASSWORD_RESET_ID
     },
   },
