@@ -52,21 +52,21 @@ const plugins = [
       },
     },
   },
-  {
-    resolve: `medusa-file-s3`,
-    options: {
-        s3_url: process.env.S3_URL,
-        bucket: process.env.S3_BUCKET,
-        region: process.env.S3_REGION,
-        access_key_id: process.env.S3_ACCESS_KEY_ID,
-        secret_access_key: process.env.S3_SECRET_ACCESS_KEY,
-        cache_control: process.env.S3_CACHE_CONTROL,
-        // optional
-        download_file_duration:
-          process.env.S3_DOWNLOAD_FILE_DURATION,
-        prefix: process.env.S3_PREFIX,
-    },
-  },
+  // {
+  //   resolve: `medusa-file-s3`,
+  //   options: {
+  //       s3_url: process.env.S3_URL,
+  //       bucket: process.env.S3_BUCKET,
+  //       region: process.env.S3_REGION,
+  //       access_key_id: process.env.S3_ACCESS_KEY_ID,
+  //       secret_access_key: process.env.S3_SECRET_ACCESS_KEY,
+  //       cache_control: process.env.S3_CACHE_CONTROL,
+  //       // optional
+  //       download_file_duration:
+  //         process.env.S3_DOWNLOAD_FILE_DURATION,
+  //       prefix: process.env.S3_PREFIX,
+  //   },
+  // },
   {
     resolve: `medusa-plugin-wishlist`,
   },
@@ -121,6 +121,23 @@ const plugins = [
         process.env.SENDGRID_USER_PASSWORD_RESET_ID
     },
   },
+  {
+    resolve: `medusa-plugin-contentful`,
+    options: {
+      space_id: process.env.CONTENTFUL_SPACE_ID,
+      access_token: process.env.CONTENTFUL_ACCESS_TOKEN,
+      environment: process.env.CONTENTFUL_ENV,
+    },
+  },
+  {
+    resolve: `medusa-file-cloudinary`,
+    options: {
+        cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
+        api_key: process.env.CLOUDINARY_API_KEY,
+        api_secret: process.env.CLOUDINARY_API_SECRET,
+        secure: true,
+    },
+},
 ];
 
 const modules = {
